@@ -1,0 +1,13 @@
+bsim4 ,waveVsWave(?x (OP("/NM0" "gm") / OP("/NM0" "ids")) ?y (OP("/NM0" "ids") / pv("top-level" "w_nmos" ?resultsDir "/home/vlsiuser28/simulation/Trapper/n_tp_vds0.4/adexl/results/data/Interactive.0/psf/Trapper:n_tp_vds0.4:1" ?result "designParamVals"))) l_nmos 4.5e-08 ,bsim4 ,waveVsWave(?x (OP("/NM0" "gm") / OP("/NM0" "ids")) ?y (OP("/NM0" "ids") / pv("top-level" "w_nmos" ?resultsDir "/home/vlsiuser28/simulation/Trapper/n_tp_vds0.4/adexl/results/data/Interactive.0/psf/Trapper:n_tp_vds0.4:1" ?result "designParamVals"))) l_nmos 1.35e-07 ,bsim4 ,waveVsWave(?x (OP("/NM0" "gm") / OP("/NM0" "ids")) ?y (OP("/NM0" "ids") / pv("top-level" "w_nmos" ?resultsDir "/home/vlsiuser28/simulation/Trapper/n_tp_vds0.4/adexl/results/data/Interactive.0/psf/Trapper:n_tp_vds0.4:1" ?result "designParamVals"))) l_nmos 2.25e-07 ,bsim4 ,waveVsWave(?x (OP("/NM0" "gm") / OP("/NM0" "ids")) ?y (OP("/NM0" "ids") / pv("top-level" "w_nmos" ?resultsDir "/home/vlsiuser28/simulation/Trapper/n_tp_vds0.4/adexl/results/data/Interactive.0/psf/Trapper:n_tp_vds0.4:1" ?result "designParamVals"))) l_nmos 3.15e-07 ,bsim4 ,waveVsWave(?x (OP("/NM0" "gm") / OP("/NM0" "ids")) ?y (OP("/NM0" "ids") / pv("top-level" "w_nmos" ?resultsDir "/home/vlsiuser28/simulation/Trapper/n_tp_vds0.4/adexl/results/data/Interactive.0/psf/Trapper:n_tp_vds0.4:1" ?result "designParamVals"))) l_nmos 4.05e-07 ,bsim4 ,waveVsWave(?x (OP("/NM0" "gm") / OP("/NM0" "ids")) ?y (OP("/NM0" "ids") / pv("top-level" "w_nmos" ?resultsDir "/home/vlsiuser28/simulation/Trapper/n_tp_vds0.4/adexl/results/data/Interactive.0/psf/Trapper:n_tp_vds0.4:1" ?result "designParamVals"))) l_nmos 4.95e-07 
+29.76,7.438E-6,33.08,3.544E-6,33.38,4.346E-6,33.50,5.044E-6,33.57,5.549E-6,33.61,5.896E-6
+29.65,145.2E-6,32.92,96.37E-6,33.16,121.5E-6,33.23,142.5E-6,33.25,157.6E-6,33.24,167.8E-6
+28.95,2.739E-3,31.92,2.491E-3,31.89,3.184E-3,31.72,3.726E-3,31.53,4.093E-3,31.36,4.329E-3
+26.65,45.10E-3,28.42,52.56E-3,27.72,64.87E-3,27.08,72.78E-3,26.59,77.11E-3,26.20,79.11E-3
+21.33,507.1E-3,21.91,654.2E-3,21.30,749.9E-3,20.73,791.0E-3,20.27,799.6E-3,19.90,791.0E-3
+16.35,3.257,16.69,4.461,15.57,4.737,14.73,4.659,14.15,4.461,13.73,4.232
+13.48,14.41,11.57,18.33,10.30,17.07,9.662,15.53,9.295,14.15,9.061,12.99
+9.936,46.80,7.496,46.85,6.803,39.53,6.513,34.36,6.367,30.56,6.285,27.63
+6.572,105.9,5.043,86.74,4.738,69.78,4.622,59.53,4.560,52.47,4.514,47.18
+4.389,181.5,3.566,132.6,3.397,104.4,3.292,88.17,3.206,77.15,3.134,68.94
+3.086,262.3,2.573,179.8,2.416,139.2,2.317,116.3,2.249,101.0,2.199,89.69
+2.271,341.9,1.861,224.0,1.738,171.0,1.670,141.7,1.625,122.3,1.593,108.2
