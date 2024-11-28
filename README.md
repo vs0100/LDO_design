@@ -1,6 +1,6 @@
 # Tech Plots for gpdk045
 
-Below are the generated technology plots of three different FOMs for the gpdk45 PDK.
+Below are the generated technology plots of three different FOMs for the gpdk045 PDK.
 
 ## nmos
 
@@ -14,6 +14,8 @@ Below are the generated technology plots of three different FOMs for the gpdk45 
 <img src="Screenshots/nmos_ft.png" alt="Step 1.2" width="800"/><br>
 
 # Tech Plots for ptm_045_hp
+
+Below are the generated technology plots of three different FOMs for the ptm_045_hp PDK.
 
 ## pmos
 
