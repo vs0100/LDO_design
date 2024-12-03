@@ -24,6 +24,8 @@ When the voltage difference between the input and output falls below the dropout
 
 <img src="Sim_SS/45_ext_dc.png" alt="Step 1.2" width="800"/><br>
 
+Below table lists down the Vgs, Vth and Vds values and the region of operation for all transistors,
+
  | Transistor | Vgs / Vsg | Vthn / \|Vthp\| | Vov   | Vds / Vsd | Region of Operation |
 |------------|-----------|-----------------|-------|-----------|---------------------|
 | M1         | 0.645     | 0.484           | 0.161 | 0.645     | Saturation          |
@@ -48,6 +50,28 @@ The locations of the two poles and the unity gain frequency is as follows,
 | fp2      | 2.51 MHz      |
 
 ### Open Loop PSRR
+
+Below is the circuit to simulate the Open-Loop PSSR,
+
+<img src="Schematics/45nm_ext_OL.png" alt="Step 1.2" width="800"/><br>
+
+#### Explanation about the simulation aritfacts
+
+In order to calculate the open loop PSRR we need to send an AC signal from the source which in our case is VDD. 
+
+Here we are giving an AC 1 signal in the source. This signal is given to the source of the passfet and the source of pmos in the diffamp. 
+
+We will ideally want very bad PSRR in the diffamp as we want the OTA output to have all the AC noise such that Vsg of pmos = 0 ( small signal analysis ). 
+
+Thus all the noise will get rejected and we will get a noise free dc voltage at the output of the LDO. 
+
+Here in order to calculate the open loop PSRR we have a RC circuit to bias the differential amplifier. 
+
+You can see AC 0 in the circuit indicating that there is an open loop in the circuit . From here we have calculated the open loop PSRR in the circuit. 
+
+Since there is no feedback in the circuit we can thus say that there will be noise at the output and thus the rejection will be very poor.
+
+#### Open Loop PSRR Waveform
 
 <img src="Graphs/45_ext_OL_h.png" alt="Step 1.2" width="800"/><br>
 
