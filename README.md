@@ -20,6 +20,21 @@ When the voltage difference between the input and output falls below the dropout
 
 ## Simulation Outputs
 
+### DC operating points for the MOSFETs
+
+<img src="Sim_SS/45_ext_dc.png" alt="Step 1.2" width="800"/><br>
+
+ | Transistor | Vgs / Vsg | Vthn / \|Vthp\| | Vov   | Vds / Vsd | Region of Operation |
+|------------|-----------|-----------------|-------|-----------|---------------------|
+| M1         | 0.645     | 0.484           | 0.161 | 0.645     | Saturation          |
+| M2         | 0.645     | 0.484           | 0.161 | 0.645     | Saturation          |
+| M3         | 0.598     | 0.466           | 0.132 | 0.354     | Saturation          |
+| M4         | 0.599     | 0.466           | 0.133 | 0.35      | Saturation          |
+| M5         | 0.597     | 0.469           | 0.128 | 0.401     | Saturation          |
+| M6         | 0.597     | 0.469           | 0.128 | 0.597     | Saturation          |
+| MPass      | 0.648     | 0.487           | 0.161 | 0.401     | Saturation          |
+| M8         | 0.597     | 0.469           | 0.128 | 0.999     | Saturation          |
+
 ### Loop Gain
 
 <img src="Graphs/45_ext_LG_h.png" alt="Step 1.2" width="800"/><br>
