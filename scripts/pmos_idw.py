@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import re
 
 # Prompt the user to enter the CSV file path
-file_path = 'pmos_04/idw.csv'
+file_path = 'pmos_ltspice/idw.csv'
 
 try:
     # Read the CSV file
@@ -25,12 +25,12 @@ try:
 
             # Extract the legend value from the column name
             column_name = y.name if isinstance(y.name, str) else str(y.name)
-            match = re.search(r'l_pmos\s+([0-9.eE+-]+)', column_name)
+            match = re.search(r'l\s+([0-9.eE+-]+)', column_name)
             
             if match:
                 # Convert the scientific notation to an absolute value
                 legend_value = float(match.group(1)) * 1e9
-                legend_value = int(round(legend_value))  # Convert to integer
+                # legend_value = int(round(legend_value))  # Convert to integer
             else:
                 legend_value = f"Curve {i + 1}"  # Fallback
             
