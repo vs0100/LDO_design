@@ -10,43 +10,75 @@ When the voltage difference between the input and output falls below the dropout
 
 <img src="Figures/OTA.png" alt="Step 1.2" width="800"/><br>
 
-# Tech Plots for gpdk045
+# Externally Compensated LDO Regulator
+
+## LTSpice Schematic
+
+<img src="Schematics/45nm_ext_CL.png" alt="Step 1.2" width="800"/><br>
+
+## Calculation of transistor sizes using the gm/Id methodology
+
+## Simulation Outputs
+
+### Loop Gain
+
+<img src="Graphs/45_ext_LG_h.png" alt="Step 1.2" width="800"/><br>
+
+The locations of the two poles and the unity gain frequency is as follows,
+
+| **Pole** | **Frequency** |
+|----------|---------------|
+| fp1      | 316.23 Hz     |
+| f_ugb    | 316.23 KHz    |
+| fp2      | 2.51 MHz      |
+
+### Open Loop PSRR
+
+<img src="Graphs/45_ext_OL_h.png" alt="Step 1.2" width="800"/><br>
+
+### Closed Loop PSRR
+
+<img src="Graphs/45_ext_CL_h.png" alt="Step 1.2" width="800"/><br>
+
+# Tech Plots
+
+## Tech Plots for gpdk045
 
 Below are the generated technology plots of three different FOMs for the gpdk045 PDK.
 
-## nmos
+### nmos
 
-### ngm_ro vs ngm_id
+#### ngm_ro vs ngm_id
 <img src="Screenshots/nmos_gmro.png" alt="Step 1.2" width="800"/><br>
 
-### nid_w vs ngm_id
+#### nid_w vs ngm_id
 <img src="Screenshots/nmos_idw.png" alt="Step 1.2" width="800"/><br>
 
-### nft vs ngm_id
+#### nft vs ngm_id
 <img src="Screenshots/nmos_ft.png" alt="Step 1.2" width="800"/><br>
 
-# Tech Plots for ptm_045_hp
+## Tech Plots for ptm_045_hp
 
 Below are the generated technology plots of three different FOMs for the ptm_045_hp PDK.
 
-## pmos
+### pmos
 
-### pgm_ro vs pgm_id
+#### pgm_ro vs pgm_id
 <img src="Screenshots/pmos_ltspice_gmro.png" alt="Step 1.2" width="800"/><br>
 
-### pid_w vs pgm_id
+#### pid_w vs pgm_id
 <img src="Screenshots/pmos_ltspice_idw.png" alt="Step 1.2" width="800"/><br>
 
-### pft vs pgm_id
+#### pft vs pgm_id
 <img src="Screenshots/pmos_ltspice_ft.png" alt="Step 1.2" width="800"/><br>
 
-## nmos
+### nmos
 
-### ngm_ro vs ngm_id
+#### ngm_ro vs ngm_id
 <img src="Screenshots/nmos_ltspice_gmro.png" alt="Step 1.2" width="800"/><br>
 
-### nid_w vs ngm_id
+#### nid_w vs ngm_id
 <img src="Screenshots/nmos_ltspice_idw.png" alt="Step 1.2" width="800"/><br>
 
-### nft vs ngm_id
+#### nft vs ngm_id
 <img src="Screenshots/nmos_ltspice_ft.png" alt="Step 1.2" width="800"/><br>

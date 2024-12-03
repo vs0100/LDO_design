@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # File path to the CSV file
-csv_file_path = "Repo\Plots\LDO_45nm_ext_90_LG_l.txt"
+csv_file_path = "Plots\LDO_45nm_ext_90_LG_h.txt"
 
 # Initialize lists for storing frequency, magnitude, and phase
 frequency = []
@@ -28,7 +28,7 @@ with open(csv_file_path, 'r') as file:
         phase.append(ph)
 
 # User-specified pole frequencies and their labels
-pole_frequencies = [63.67, 63670, 13094861]  # Example pole frequencies (can be updated)
+pole_frequencies = [318.31, 318310, 2633000]  # Example pole frequencies (can be updated)
 pole_labels = ['Wp1', 'Wugb', 'Wp2']  # Labels for the poles
 
 # Find and annotate poles
@@ -48,12 +48,17 @@ ax1.tick_params(axis='y', labelcolor=color)
 ax1.grid(which='both', linestyle='--', linewidth=0.5)
 ax1.legend(loc='lower left')
 
-# Annotate poles with a cross (X) and dynamically offset text labels
+# Annotate poles with a cross (X) and customized offsets
 for (freq, mag), label in zip(pole_points, pole_labels):
     ax1.scatter(freq, mag, color='black', marker='x', s=100)
-    # Dynamically offset the text: above and slightly to the side
-    x_offset = 0.05 * freq  # Slight horizontal offset proportional to frequency
-    y_offset = 7  # Fixed vertical offset above the marker
+    if label == 'Wp1':
+        # Custom placement for Wp1
+        x_offset = -0.1 * freq  # Horizontal offset for Wp1
+        y_offset = -10  # Vertical offset for Wp1
+    else:
+        # Default placement for other poles
+        x_offset = 0.05 * freq
+        y_offset = 7
     ax1.text(freq + x_offset, mag + y_offset, f'{label}\n({freq:.2f} Hz)', 
              fontsize=8, color='black', ha='left', va='bottom')
 
@@ -66,6 +71,6 @@ ax2.tick_params(axis='y', labelcolor=color)
 ax2.legend(loc='upper right')
 
 # Final adjustments
-plt.title('Loop Gain Bode Plot for externally compensated LDO with light load current (2 mA)')
+plt.title('Loop Gain Bode Plot for externally compensated LDO with heavy load current (10 mA)')
 plt.tight_layout()  # Adjust layout to prevent clipping
 plt.show()
