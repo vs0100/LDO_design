@@ -79,6 +79,39 @@ Since there is no feedback in the circuit we can thus say that there will be noi
 
 <img src="Graphs/45_ext_CL_h.png" alt="Step 1.2" width="800"/><br>
 
+# Internally Compensated LDO Regulator
+
+## LTSpice Schematic
+
+<img src="Schematics/45nm_int_CL.png" alt="Step 1.2" width="800"/><br>
+
+## Calculation of transistor sizes using the gm/Id methodology
+
+## Simulation Outputs
+
+### DC operating points for the MOSFETs
+
+<img src="Sim_SS/45_int_dc.png" alt="Step 1.2" width="800"/><br>
+
+Below table lists down the Vgs, Vth and Vds values and the region of operation for all transistors,
+
+| Transistor | Vgs / Vsg | Vthn / \|Vthp\| | Vov   | Vds / Vsd | Region of Operation |
+|------------|-----------|-----------------|-------|-----------|---------------------|
+| M1         | 0.646     | 0.484           | 0.162 | 0.646     | Saturation          |
+| M2         | 0.646     | 0.485           | 0.161 | 0.532     | Saturation          |
+| M3         | 0.599     | 0.466           | 0.133 | 0.349     | Saturation          |
+| M4         | 0.595     | 0.465           | 0.13  | 0.463     | Saturation          |
+| M5         | 0.597     | 0.469           | 0.128 | 0.405     | Saturation          |
+| M6         | 0.597     | 0.469           | 0.128 | 0.597     | Saturation          |
+| MPass      | 0.532     | 0.487           | 0.045 | 0.401     | Saturation          |
+| M8         | 0.597     | 0.469           | 0.128 | 1         | Saturation          |
+
+### Loop Gain
+
+<img src="Graphs/45nm_int_CL_PSRR.png" alt="Step 1.2" width="800"/><br>
+
+
+
 # Tech Plots
 
 ## Tech Plots for gpdk045
