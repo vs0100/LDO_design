@@ -136,7 +136,7 @@ Below table lists down the Vgs, Vth and Vds values and the region of operation f
 | MPass      | 0.648     | 0.487           | 0.161 | 0.401     | Saturation          |
 | M8         | 0.597     | 0.469           | 0.128 | 0.999     | Saturation          |
 
-### Loop Gain for worst case scenario with heavy load current of 10 mA
+#### Loop Gain for worst case scenario with heavy load current of 10 mA
 
 <img src="Graphs/45_ext_LG_h.png" alt="Step 1.2" width="800"/><br>
 
@@ -152,7 +152,15 @@ The locations of the two poles and the unity gain frequency is as follows,
 
 The Phase Margin for the load current of 10 mA is equal to **83.17** degrees.
 
-### Open Loop PSRR for worst case scenario with heavy load current of 10 mA
+#### Loop Gain for light load current of 2 mA
+
+<img src="Graphs/45_ext_LG_l.png" alt="Step 1.2" width="800"/><br>
+
+<img src="Sim_SS/45_ext_PM_light.png" alt="Step 1.2" width="800"/><br>
+
+The Phase Margin for the load current of 2 mA is equal to **87.63** degrees.
+
+### Open Loop PSRR
 
 Below is the circuit to simulate the Open-Loop PSSR,
 

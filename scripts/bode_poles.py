@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # File path to the CSV file
-csv_file_path = "Plots\LDO_45nm_int_90_LG.txt"
+csv_file_path = "Plots\LDO_45nm_ext_90_LG_l.txt"
 
 # Initialize lists for storing frequency, magnitude, and phase
 frequency = []
@@ -28,8 +28,8 @@ with open(csv_file_path, 'r') as file:
         phase.append(ph)
 
 # User-specified pole frequencies and their labels
-pole_frequencies = [2330, 2482890]  # Example pole frequencies (can be updated)
-pole_labels = ['Wp1', 'Wp2 = Wugb']  # Labels for the poles
+pole_frequencies = [63.6619, 63661.977, 2482890, ]  # Example pole frequencies (can be updated)
+pole_labels = ['Wp1', 'Wugb', 'Wp2']  # Labels for the poles
 
 # Find and annotate poles
 pole_indices = [np.argmin(np.abs(np.array(frequency) - pole)) for pole in pole_frequencies]
