@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import re
 
 # Prompt the user to enter the CSV file path
-file_path = 'pmos_ltspice/ft.csv'
+file_path = 'ptm045/pmos_ltspice/ft.csv'
 
 try:
     # Read the CSV file

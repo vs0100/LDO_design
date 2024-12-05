@@ -314,24 +314,9 @@ Below table lists down the Vgs, Vth and Vds values and the region of operation f
 
 # Tech Plots
 
-## Tech Plots for gpdk045
-
-Below are the generated technology plots of three different FOMs for the gpdk045 PDK.
-
-### nmos
-
-#### ngm_ro vs ngm_id
-<img src="Screenshots/nmos_gmro.png" alt="Step 1.2" width="800"/><br>
-
-#### nid_w vs ngm_id
-<img src="Screenshots/nmos_idw.png" alt="Step 1.2" width="800"/><br>
-
-#### nft vs ngm_id
-<img src="Screenshots/nmos_ft.png" alt="Step 1.2" width="800"/><br>
-
 ## Tech Plots for ptm_045_hp
 
-Below are the generated technology plots of three different FOMs for the ptm_045_hp PDK.
+Below are the generated technology plots of three different FOMs for the ptm_045_hp PDK,
 
 ### pmos
 
@@ -354,3 +339,22 @@ Below are the generated technology plots of three different FOMs for the ptm_045
 
 #### nft vs ngm_id
 <img src="Screenshots/nmos_ltspice_ft.png" alt="Step 1.2" width="800"/><br>
+
+# Relevance of Tech Plots
+
+After post-processing of the generated tech-plot csv files for both pmos and nmos, following are the takeaways,
+
+* fT improves with shorter channel lengths, thus conclusion is transistors with smaller channel lengths are faster.
+
+* Comparision of the FOMs for pmos with different lengths,
+
+    | Length (nm) | gmro | Id/W  | fT (GHz) |
+    |-------------|------|-------|----------|
+    | 67.5        | 17.9 | 168   | 70       |
+    | 135         | 53   | 74.4  | 17.2     |
+    | 270         | 89   | 35.1  | 4.383    |
+
+* We chose the Vds to be 0.4 mV, and we expect that to result in some error because
+the Vds across every MOSFET might not be the same after sizing the circuit under
+a particular load. It is very possible that the Vds across the MOSFETs can change
+under different values of load current.
