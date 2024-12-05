@@ -12,6 +12,20 @@ When the voltage difference between the input and output falls below the dropout
 
 # Externally Compensated LDO Regulator
 
+## Specification of the Design
+
+| Specification                              | Externally Compensated LDO |
+|--------------------------------------------|----------------------------|
+| Input Voltage (V<sub>in</sub>)             | 1.4 V                      |
+| Output Voltage (V<sub>out</sub>)           | 1 V                        |
+| Power Supply Rejection Ratio (PSRR) at heavy load | 60 dB                      |
+| Minimum Load Current (I<sub>load,min</sub>) | 2 mA                       |
+| Maximum Load Current (I<sub>load,max</sub>) | 10 mA                      |
+| Load Capacitance (C<sub>load</sub>)        | 1 µF                       |
+| Quiescent Current (I<sub>quiescent</sub>)  | 50 µA                     |
+| Transient Duration                         | Report                        |
+
+
 ## LTSpice Schematic
 
 <img src="Schematics/45nm_ext_CL.png" alt="Step 1.2" width="800"/><br>
@@ -97,29 +111,6 @@ Id/w = 31
 w = Id * w/Id = 2um
 
 PSRR = -58.6dB
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ## Simulation Outputs
 
