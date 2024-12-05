@@ -39,6 +39,7 @@
     - [Closed Loop PSRR for minimum load current of 2 mA](#closed-loop-psrr-for-minimum-load-current-of-2-ma)
     - [Closed Loop PSRR for minimum load current of 10 mA](#closed-loop-psrr-for-minimum-load-current-of-10-ma)
     - [Transient Response of internally compensated LDO regulator](#transient-response-of-internally-compensated-ldo-regulator)
+  - [Comparison of Phase Margin and Closed loop PSRR for ILoad\_min and ILoad\_Max](#comparison-of-phase-margin-and-closed-loop-psrr-for-iload_min-and-iload_max-1)
 - [Tech Plots](#tech-plots)
   - [Tech Plots for ptm\_045\_hp](#tech-plots-for-ptm_045_hp)
     - [pmos](#pmos)
@@ -399,6 +400,14 @@ The phase margin of the internally compensated LDO with heavy load current of 10
 
 <img src="Graphs/45_int_Tr.png" alt="Step 1.2" width="800"/><br>
 
+Here we see spikes because the feedback loop takes time to respond to the change of load current. Also we see more spike when the Load current changes from min to max value, and the spike is less when the Load current reduces from max to min value.
+
+## Comparison of Phase Margin and Closed loop PSRR for ILoad_min and ILoad_Max
+
+| Current (mA)     | Phase Margin (Degrees) | Closed Loop PSRR (dB) |
+|-------------------|------------------------|------------------------|
+| 2 (Worst Case)   | 49.68                 | -51.67                |
+| 10                 | 68.61                 | -55.94                |
 
 # Tech Plots
 
