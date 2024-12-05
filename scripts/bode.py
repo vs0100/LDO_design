@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # File path to the CSV file
-csv_file_path = "Plots\LDO_45nm_ext_90_CL_h.txt"
+csv_file_path = "Plots\LDO_45nm_ext_90_CL_l.txt"
 
 # Initialize lists for storing frequency, magnitude, and phase
 frequency = []

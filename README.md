@@ -19,6 +19,8 @@
       - [Explanation about the simulation aritfacts](#explanation-about-the-simulation-aritfacts)
       - [Open Loop PSRR Waveform for worst case scenario with heavy load current of 10 mA](#open-loop-psrr-waveform-for-worst-case-scenario-with-heavy-load-current-of-10-ma)
     - [Closed Loop PSRR for worst case scenario with heavy load current of 10 mA](#closed-loop-psrr-for-worst-case-scenario-with-heavy-load-current-of-10-ma)
+    - [Closed Loop PSRR with light load current of 2 mA](#closed-loop-psrr-with-light-load-current-of-2-ma)
+  - [Comparison of Phase Margin and Closed loop PSRR for ILoad\_min and ILoad\_Max](#comparison-of-phase-margin-and-closed-loop-psrr-for-iload_min-and-iload_max)
 - [Internally Compensated LDO Regulator](#internally-compensated-ldo-regulator)
   - [Specification of the Design](#specification-of-the-design-1)
   - [LTSpice Schematic](#ltspice-schematic-1)
@@ -238,6 +240,18 @@ Since there is no feedback in the circuit we can thus say that there will be noi
 ### Closed Loop PSRR for worst case scenario with heavy load current of 10 mA
 
 <img src="Graphs/45_ext_CL_h.png" alt="Step 1.2" width="800"/><br>
+
+### Closed Loop PSRR with light load current of 2 mA
+
+<img src="Graphs/45_ext_CL_l.png" alt="Step 1.2" width="800"/><br>
+
+## Comparison of Phase Margin and Closed loop PSRR for ILoad_min and ILoad_Max
+
+| Current (mA)     | Phase Margin (Degrees) | Closed Loop PSRR (dB) |
+|-------------------|------------------------|------------------------|
+| 10 (Worst Case)   | 83.17                 | -57.32                |
+| 2                 | 87.63                 | -51.31                |
+
 
 # Internally Compensated LDO Regulator
 
