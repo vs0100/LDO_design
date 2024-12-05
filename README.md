@@ -186,17 +186,16 @@ Since there is no feedback in the circuit we can thus say that there will be noi
 
 ## Specification of the Design
 
-| Specification                            | Internally Compensated LDO |
-|------------------------------------------|----------------------------|
-| Input Voltage (\(V_{in}\))               | 1.4 V                      |
-| Output Voltage (\(V_{out}\))             | 1 V                        |
-| Power Supply Rejection Ratio (PSRR)      | 60 dB                      |
-| at heavy load                            |                            |
-| Minimum Load Current (\(I_{load,min}\))  | 2 mA                       |
-| Maximum Load Current (\(I_{load,max}\))  | 10 mA                      |
-| Load Capacitance (\(C_{load}\))          | 2 nF                       |
-| Quiescent Current (\(I_{quiescent}\))    | 50 µA                      |
-| Transient Duration                       | 1 µs                       |
+| Specification                              | Internally Compensated LDO |
+|--------------------------------------------|----------------------------|
+| Input Voltage (\(V_{\text{in}}\))           | 1.4 V                      |
+| Output Voltage (\(V_{\text{out}}\))         | 1 V                        |
+| Power Supply Rejection Ratio (PSRR) at heavy load | 60 dB                      |
+| Minimum Load Current (\(I_{\text{load,min}}\)) | 2 mA                       |
+| Maximum Load Current (\(I_{\text{load,max}}\)) | 10 mA                      |
+| Load Capacitance (\(C_{\text{load}}\))       | 2 nF                       |
+| Quiescent Current (\(I_{\text{quiescent}}\)) | 50 µA                      |
+| Transient Duration                          | 1 µs                       |
 
 
 ## LTSpice Schematic
