@@ -184,6 +184,21 @@ Since there is no feedback in the circuit we can thus say that there will be noi
 
 # Internally Compensated LDO Regulator
 
+## Specification of the Design
+
+| Specification                            | Internally Compensated LDO |
+|------------------------------------------|----------------------------|
+| Input Voltage (\(V_{in}\))               | 1.4 V                      |
+| Output Voltage (\(V_{out}\))             | 1 V                        |
+| Power Supply Rejection Ratio (PSRR)      | 60 dB                      |
+| at heavy load                            |                            |
+| Minimum Load Current (\(I_{load,min}\))  | 2 mA                       |
+| Maximum Load Current (\(I_{load,max}\))  | 10 mA                      |
+| Load Capacitance (\(C_{load}\))          | 2 nF                       |
+| Quiescent Current (\(I_{quiescent}\))    | 50 µA                      |
+| Transient Duration                       | 1 µs                       |
+
+
 ## LTSpice Schematic
 
 <img src="Schematics/45nm_int_CL.png" alt="Step 1.2" width="800"/><br>
@@ -195,113 +210,64 @@ We sized the pass transistor with the minimum channel length using the 45nm tech
 
 For the calculation,  C<sub>c</sub> we considered a light load condition to account for the worst-case phase margin scenario.
 
+### Pass FET Sizing
 
+```
 gm/Id = 10
-
 Id = 10mA
-
 gm/Id * Id = 100mS
-
-A<sub>passfet_heavy</sub> = gmro = 50
-
-Id/w = 38
-
+A_passfet_heavy = gmro = 50
+Id/W = 38 (From Tech Plot)
 ro = 500 ohms
+W = 270um
+```
+Size for Pass FET,
 
-CL = 2nF
-
-w = 270um
-
-w<sub>p2_heavy</sub> = gm/CL = 50Mrad/S
-
-fp1 = wp1/(2*pi) = 7.96MHz
-
-#### Light Load:
-
-Id = 2mA
-
-Id/w = 7.6
-
-gm/Id = 17.6
-
-gmro<sub>passfet_light</sub> = 60
-
+```
+L = 90 nm
+W = 270 um
+```
 
 ### Error Amplifier Sizing:
 
+```
 Loop gain = 60dB = 1000
-
-A<sub>passfet</sub> * A<sub>ota</sub> = 1000
-
-50 * (gmro/2)<sub>ota</sub> = 1000
-
-(gmro)<sub>ota</sub> = 40
+A_passfet * A_ota = 1000
+50 * (gmro/2) = 1000
+(gmro)_ota = 40
+```
 
 
-#### PMOS LOAD SIZING:
+#### PMOS Load Sizing
 
-gm/Id = 10
+Size for nmos differential pair transistors in OTA,
 
-A<sub>pmosload</sub> = gmro = 50
+```
+L = 90 nm
+W = 670 nm
+```
 
-L = 90nm
+#### NMOS Load Sizing
 
-Id = 25uA
+Size for pmos load transistors in OTA,
 
-Id/w = 37.55
-
-w = Id * (w/Id) = 670nm
-
-gm = gm/Id * Id = 250uS 
-
-<sub>pmosload</sub> = 200 kohms
-
-#### NMOS LOAD SIZING:
-
-gm/Id = 10
-
-A<sub>pmosload</sub> = gmro = 53
-
-L = 90nm
-
-Id = 25uA
-
-Id/w = 88
-
-w = Id * (w/Id) = 284nm
-
-gm = gm/Id * Id = 250uS 
-
-ro = 212 Kohms
-
-#### Sizing C<sub>c</sub> :
-
-C<sub>c</sub> = 10.8 pF
-
-ro<sub>diff</sub> = 103 Kohms
-
-wp1 = 14.7 Krad/S
-
-fp1 = 2.33 KHz
+```
+L = 90 nm
+W = 290 nm
+```
 
 ### Current Mirror Sizing:
 
 For current mirror sizing, we use the maximum channel length to achieve high output resistance and minimize channel-length modulation
 
-Maximum length L = 270nm
+Size for current mirror transistors,
 
-gm*ro = 155
+```
+L = 270nm
+W = 2u
+```
 
-Id/w = 31
-
-w = Id * w/Id = 2um
-
-
-
-
-
-
-
+For detailed sizing of the other transistors, please refer to this [Excel](Excel/Miller_45nm.xlsx) sheet used for sizing of the transistors.
 
 ## Simulation Outputs
 
