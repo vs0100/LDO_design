@@ -41,6 +41,12 @@
     - [Closed Loop PSRR for minimum load current of 10 mA](#closed-loop-psrr-for-minimum-load-current-of-10-ma)
     - [Transient Response of internally compensated LDO regulator](#transient-response-of-internally-compensated-ldo-regulator)
   - [Comparison of Phase Margin and Closed loop PSRR for ILoad\_min and ILoad\_Max](#comparison-of-phase-margin-and-closed-loop-psrr-for-iload_min-and-iload_max-1)
+  - [Area vs gm/Id Plot for ptm045 PDK](#area-vs-gmid-plot-for-ptm045-pdk)
+    - [Transistor Calculations for Different ( g\_m/I\_D ) Ratios](#transistor-calculations-for-different--g_mi_d--ratios)
+    - [For ( g\_m/I\_D = 15 )](#for--g_mi_d--15-)
+    - [For ( g\_m/I\_D = 12 )](#for--g_mi_d--12-)
+    - [For ( g\_m/I\_D = 10 )](#for--g_mi_d--10-)
+    - [Overall Area vs ( g\_m/I\_D )](#overall-area-vs--g_mi_d-)
 - [Tech Plots](#tech-plots)
   - [Tech Plots for ptm\_045\_hp](#tech-plots-for-ptm_045_hp)
     - [pmos](#pmos)
@@ -267,6 +273,11 @@ Here, we can see that with the change in Load current, the output voltage is abl
 
 <img src="Graphs/45_ext_Vdd.png" alt="Step 1.2" width="800"/><br>
 
+From the plots we can see that we are getting regulation after 1.2 till 1.4v. After this
+voltage we are still getting 1v output but we can’t comment on the circuit since the device
+has a nominal voltage of 1v and the vds across the mosfets might go above 1v so the
+device can breakdown.
+
 # Internally Compensated LDO Regulator
 
 ## Specification of the Design
@@ -412,6 +423,60 @@ Here we see spikes because the feedback loop takes time to respond to the change
 |-------------------|------------------------|------------------------|
 | 2 (Worst Case)   | 49.68                 | -51.67                |
 | 10                 | 68.61                 | -55.94                |
+
+
+## Area vs gm/Id Plot for ptm045 PDK
+
+This document summarizes the area calculations for different gm/Id values. The table below lists the areas of individual transistors (passfet, PMOS diffamp FET, NMOS diffamp FET, and current mirror FET) as well as the overall area for each gm/Id value.
+
+### Transistor Calculations for Different \( g_m/I_D \) Ratios
+
+| **gm/Id** | **Passfet Area (\(\mu m^2\))** | **P Area (\(\mu m^2\))** | **N Area (\(\mu m^2\))** | **CM FET Area (\(\mu m^2\))** | **Overall Area (\(\mu m^2\))** |
+|-----------|-------------------------------|--------------------------|--------------------------|-----------------------------|--------------------------------|
+| 10        | 12.08                        | 0.297                    | 0.1124                   | 0.9085                      | 13.3979                       |
+| 12        | 17.82                        | 0.445                    | 0.1156                   | 1.36                        | 19.781                        |
+| 15        | 32.46                        | 0.544                    | 0.215                    | 2.55                        | 35.769                        |
+
+
+---
+
+### For \( g_m/I_D = 15 \)
+- **Area of passfet:** 32.46 \(\mu\)m²
+- **Area of PMOS diffamp FET:** 0.544 \(\mu\)m²
+- **Area of NMOS diffamp FET:** 0.215 \(\mu\)m²
+- **Area of Current mirror FET:** 2.55 \(\mu\)m²
+- **Overall area:** 35.769 \(\mu\)m²
+
+---
+
+### For \( g_m/I_D = 12 \)
+- **Area of passfet:** 17.82 \(\mu\)m²
+- **Area of PMOS diffamp FET:** 0.445 \(\mu\)m²
+- **Area of NMOS diffamp FET:** 0.1156 \(\mu\)m²
+- **Area of Current mirror FET:** 1.36 \(\mu\)m²
+- **Overall area:** 19.781 \(\mu\)m²
+
+---
+
+### For \( g_m/I_D = 10 \)
+- **Area of passfet:** 12.08 \(\mu\)m²
+- **Area of PMOS diffamp FET:** 0.297 \(\mu\)m²
+- **Area of NMOS diffamp FET:** 0.1124 \(\mu\)m²
+- **Area of Current mirror FET:** 0.9085 \(\mu\)m²
+- **Overall area:** 13.3979 \(\mu\)m²
+
+---
+
+### Overall Area vs \( g_m/I_D \)
+
+<img src="Graphs/Area.png" alt="Step 1.2" width="800"/><br>
+
+---
+
+We observe that the area increases as the device operates further in the subthreshold region with decreasing overdrive voltage. The \( V_{gs} \) also decreases, assuming the threshold voltage remains the same. Consequently:
+- The source voltage required to drive the LDO decreases.
+- Bias currents required for MOSFET operation reduce.
+- Power required to drive the entire circuit also reduces.
 
 
 # Tech Plots
