@@ -17,6 +17,109 @@ When the voltage difference between the input and output falls below the dropout
 <img src="Schematics/45nm_ext_CL.png" alt="Step 1.2" width="800"/><br>
 
 ## Calculation of transistor sizes using the gm/Id methodology
+### Passfet Sizing:
+We sized the pass transistor with the minimum channel length using the 45nm technology node to maximize current flow and minimize resistance. However, to achieve better gain, we opted to use a channel length of 90nm.
+
+gm/Id = 10
+
+Id = 10mA
+
+gm/Id * Id = 100mS
+
+A<sub>passfet</sub> = gmro = 50
+
+Id/w = 38
+
+ro = 500 ohms
+
+CL = 1uF
+
+w = 270um
+
+wp1 = 1/ro*CL = 2Krad/s
+
+fp1 = wp1/(2*pi) = 0.636KHz
+
+
+### Error Amplifier Sizing:
+
+Loop gain = 60dB = 1000
+
+A<sub>passfet</sub> * A<sub>ota</sub> = 1000
+
+50 * (gmro/2)<sub>ota</sub> = 1000
+
+(gmro)<sub>ota</sub> = 40
+
+
+#### PMOS LOAD SIZING:
+
+gm/Id = 10
+
+A<sub>pmosload</sub> = gmro = 50
+
+L = 90nm
+
+Id = 25uA
+
+Id/w = 40
+
+w = Id * (w/Id) = 625nm
+
+gm = gm/Id * Id = 250uS 
+
+#### NMOS LOAD SIZING:
+
+gm/Id = 10
+
+A<sub>pmosload</sub> = gmro = 53
+
+L = 90nm
+
+Id = 25uA
+
+Id/w = 90
+
+w = Id * (w/Id) = 280nm
+
+gm = gm/Id * Id = 250uS 
+
+### Current Mirror Sizing:
+
+For current mirror sizing, we use the maximum channel length to achieve high output resistance and minimize channel-length modulation
+
+Maximum length L = 270nm
+
+gm*ro = 155
+
+Id/w = 31
+
+w = Id * w/Id = 2um
+
+PSRR = -58.6dB
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Simulation Outputs
 
@@ -86,6 +189,119 @@ Since there is no feedback in the circuit we can thus say that there will be noi
 <img src="Schematics/45nm_int_CL.png" alt="Step 1.2" width="800"/><br>
 
 ## Calculation of transistor sizes using the gm/Id methodology
+
+We sized the pass transistor with the minimum channel length using the 45nm technology node to maximize current flow and minimize resistance. However, to achieve better gain, we opted to use a channel length of 90nm.
+
+
+For the calculation,  C<sub>c</sub> we considered a light load condition to account for the worst-case phase margin scenario.
+
+
+gm/Id = 10
+
+Id = 10mA
+
+gm/Id * Id = 100mS
+
+A<sub>passfet_heavy</sub> = gmro = 50
+
+Id/w = 38
+
+ro = 500 ohms
+
+CL = 2nF
+
+w = 270um
+
+w<sub>p2_heavy</sub> = gm/CL = 50Mrad/S
+
+fp1 = wp1/(2*pi) = 7.96MHz
+
+#### Light Load:
+
+Id = 2mA
+
+Id/w = 7.6
+
+gm/Id = 17.6
+
+gmro<sub>passfet_light</sub> = 60
+
+
+### Error Amplifier Sizing:
+
+Loop gain = 60dB = 1000
+
+A<sub>passfet</sub> * A<sub>ota</sub> = 1000
+
+50 * (gmro/2)<sub>ota</sub> = 1000
+
+(gmro)<sub>ota</sub> = 40
+
+
+#### PMOS LOAD SIZING:
+
+gm/Id = 10
+
+A<sub>pmosload</sub> = gmro = 50
+
+L = 90nm
+
+Id = 25uA
+
+Id/w = 37.55
+
+w = Id * (w/Id) = 670nm
+
+gm = gm/Id * Id = 250uS 
+
+<sub>pmosload</sub> = 200 kohms
+
+#### NMOS LOAD SIZING:
+
+gm/Id = 10
+
+A<sub>pmosload</sub> = gmro = 53
+
+L = 90nm
+
+Id = 25uA
+
+Id/w = 88
+
+w = Id * (w/Id) = 284nm
+
+gm = gm/Id * Id = 250uS 
+
+ro = 212 Kohms
+
+#### Sizing C<sub>c</sub> :
+
+C<sub>c</sub> = 10.8 pF
+
+ro<sub>diff</sub> = 103 Kohms
+
+wp1 = 14.7 Krad/S
+
+fp1 = 2.33 KHz
+
+### Current Mirror Sizing:
+
+For current mirror sizing, we use the maximum channel length to achieve high output resistance and minimize channel-length modulation
+
+Maximum length L = 270nm
+
+gm*ro = 155
+
+Id/w = 31
+
+w = Id * w/Id = 2um
+
+
+
+
+
+
+
 
 ## Simulation Outputs
 
