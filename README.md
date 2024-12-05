@@ -31,86 +31,91 @@ When the voltage difference between the input and output falls below the dropout
 <img src="Schematics/45nm_ext_CL.png" alt="Step 1.2" width="800"/><br>
 
 ## Calculation of transistor sizes using the gm/Id methodology
+
 ### Passfet Sizing:
 We sized the pass transistor with the minimum channel length using the 45nm technology node to maximize current flow and minimize resistance. However, to achieve better gain, we opted to use a channel length of 90nm.
 
+```
 gm/Id = 10
-
 Id = 10mA
-
 gm/Id * Id = 100mS
-
-A<sub>passfet</sub> = gmro = 50
-
-Id/w = 38
-
+A_passfet = gmro_passfet = 50
+Id/W = 38 (From Tech Plot)
 ro = 500 ohms
-
 CL = 1uF
-
-w = 270um
-
+W = 270um
 wp1 = 1/ro*CL = 2Krad/s
-
 fp1 = wp1/(2*pi) = 0.636KHz
+```
+Size for Pass-FET
 
+```
+L = 90 nm
+W = 270 um
+```
 
 ### Error Amplifier Sizing:
 
+```
 Loop gain = 60dB = 1000
+A_passfet * A_ota = 1000
+50 * (gmro/2)_ota = 1000
+(gmro)_ota = 40
+```
 
-A<sub>passfet</sub> * A<sub>ota</sub> = 1000
+#### PMOS Load Sizing
 
-50 * (gmro/2)<sub>ota</sub> = 1000
-
-(gmro)<sub>ota</sub> = 40
-
-
-#### PMOS LOAD SIZING:
-
+```
 gm/Id = 10
-
-A<sub>pmosload</sub> = gmro = 50
-
+A_pmosload = gmro_ota = 50
 L = 90nm
-
 Id = 25uA
+Id/W = 40 (From Tech Plot)
+W = Id * (w/Id) = 625nm
+gm = gm/Id * Id = 250uS
+``` 
+Size for pmos ota transistors,
 
-Id/w = 40
+```
+L = 90 nm
+W = 625 nm 
+```
 
-w = Id * (w/Id) = 625nm
+#### NMOS Load Sizing
 
-gm = gm/Id * Id = 250uS 
-
-#### NMOS LOAD SIZING:
-
+```
 gm/Id = 10
-
-A<sub>pmosload</sub> = gmro = 53
-
+A_pmosload = gmro_ota = 53
 L = 90nm
-
 Id = 25uA
+Id/W = 90
+W = Id * (W/Id) = 280nm
+gm = gm/Id * Id = 250uS
+``` 
+Size for nmos ota transistors,
 
-Id/w = 90
-
-w = Id * (w/Id) = 280nm
-
-gm = gm/Id * Id = 250uS 
+```
+L = 90 nm
+W = 280 nm 
+```
 
 ### Current Mirror Sizing:
 
 For current mirror sizing, we use the maximum channel length to achieve high output resistance and minimize channel-length modulation
 
-Maximum length L = 270nm
-
+```
+Maximum length L = 270nm (From Tech Plot)
 gm*ro = 155
+Id/W = 31
+W = Id * W/Id = 2um
+```
 
-Id/w = 31
+Size for Current Mirror transistors,
 
-w = Id * w/Id = 2um
-
-PSRR = -58.6dB
+```
+L = 270 nm
+W = 2 um 
+```
 
 ## Simulation Outputs
 
