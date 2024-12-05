@@ -20,6 +20,7 @@
       - [Open Loop PSRR Waveform for worst case scenario with heavy load current of 10 mA](#open-loop-psrr-waveform-for-worst-case-scenario-with-heavy-load-current-of-10-ma)
     - [Closed Loop PSRR for worst case scenario with heavy load current of 10 mA](#closed-loop-psrr-for-worst-case-scenario-with-heavy-load-current-of-10-ma)
     - [Closed Loop PSRR with light load current of 2 mA](#closed-loop-psrr-with-light-load-current-of-2-ma)
+    - [Transient Response of externally compensated LDO](#transient-response-of-externally-compensated-ldo)
   - [Comparison of Phase Margin and Closed loop PSRR for ILoad\_min and ILoad\_Max](#comparison-of-phase-margin-and-closed-loop-psrr-for-iload_min-and-iload_max)
 - [Internally Compensated LDO Regulator](#internally-compensated-ldo-regulator)
   - [Specification of the Design](#specification-of-the-design-1)
@@ -32,10 +33,13 @@
     - [Current Mirror Sizing:](#current-mirror-sizing-1)
   - [Simulation Outputs](#simulation-outputs-1)
     - [DC operating points for the MOSFETs](#dc-operating-points-for-the-mosfets-1)
-    - [Loop Gain for minimum load current of 2 mA](#loop-gain-for-minimum-load-current-of-2-ma)
+    - [Loop Gain of worst case scenario for minimum load current of 2 mA](#loop-gain-of-worst-case-scenario-for-minimum-load-current-of-2-ma)
+    - [Loop Gain for maximum load current of 10 mA](#loop-gain-for-maximum-load-current-of-10-ma)
     - [Open Loop PSRR for minimum load current of 2 mA](#open-loop-psrr-for-minimum-load-current-of-2-ma)
     - [Closed Loop PSRR for minimum load current of 2 mA](#closed-loop-psrr-for-minimum-load-current-of-2-ma)
-    - [Phase Margin for 2 mA load current](#phase-margin-for-2-ma-load-current)
+    - [Closed Loop PSRR for minimum load current of 10 mA](#closed-loop-psrr-for-minimum-load-current-of-10-ma)
+    - [Transient Response of internally compensated LDO regulator](#transient-response-of-internally-compensated-ldo-regulator)
+  - [Comparison of Phase Margin and Closed loop PSRR for ILoad\_min and ILoad\_Max](#comparison-of-phase-margin-and-closed-loop-psrr-for-iload_min-and-iload_max-1)
 - [Tech Plots](#tech-plots)
   - [Tech Plots for ptm\_045\_hp](#tech-plots-for-ptm_045_hp)
     - [pmos](#pmos)
@@ -245,6 +249,12 @@ Since there is no feedback in the circuit we can thus say that there will be noi
 
 <img src="Graphs/45_ext_CL_l.png" alt="Step 1.2" width="800"/><br>
 
+### Transient Response of externally compensated LDO
+
+<img src="Graphs/45_ext_Tr.png" alt="Step 1.2" width="800"/><br>
+
+Here, we can see that with the change in Load current, the output voltage is able to transition smoothly with transition in load current. We don't observe any sort of spikes since there is a big load capacitance present at output node.
+
 ## Comparison of Phase Margin and Closed loop PSRR for ILoad_min and ILoad_Max
 
 | Current (mA)     | Phase Margin (Degrees) | Closed Loop PSRR (dB) |
@@ -358,9 +368,21 @@ Below table lists down the Vgs, Vth and Vds values and the region of operation f
 | MPass      | 0.532     | 0.487           | 0.045 | 0.401     | Saturation          |
 | M8         | 0.597     | 0.469           | 0.128 | 1         | Saturation          |
 
-### Loop Gain for minimum load current of 2 mA
+### Loop Gain of worst case scenario for minimum load current of 2 mA
 
 <img src="Graphs/45_int_LG.png" alt="Step 1.2" width="800"/><br>
+
+<img src="Sim_SS/45_int_PM.png" alt="Step 1.2" width="800"/><br>
+
+The phase margin of the internally compensated LDO with light load current of 2 mA is equal to 49.68 degrees.
+
+### Loop Gain for maximum load current of 10 mA
+
+<img src="Graphs/45_int_LG_h.png" alt="Step 1.2" width="800"/><br>
+
+<img src="Sim_SS/45_int_PM_heavy.png" alt="Step 1.2" width="800"/><br>
+
+The phase margin of the internally compensated LDO with heavy load current of 10 mA is equal to 68.61 degrees.
 
 ### Open Loop PSRR for minimum load current of 2 mA
 
@@ -370,10 +392,22 @@ Below table lists down the Vgs, Vth and Vds values and the region of operation f
 
 <img src="Graphs/45_int_CL.png" alt="Step 1.2" width="800"/><br>
 
-### Phase Margin for 2 mA load current
+### Closed Loop PSRR for minimum load current of 10 mA
 
-<img src="Sim_SS/45_int_PM.png" alt="Step 1.2" width="800"/><br>
+<img src="Graphs/45_int_CL_h.png" alt="Step 1.2" width="800"/><br>
 
+### Transient Response of internally compensated LDO regulator
+
+<img src="Graphs/45_int_Tr.png" alt="Step 1.2" width="800"/><br>
+
+Here we see spikes because the feedback loop takes time to respond to the change of load current. Also we see more spike when the Load current changes from min to max value, and the spike is less when the Load current reduces from max to min value.
+
+## Comparison of Phase Margin and Closed loop PSRR for ILoad_min and ILoad_Max
+
+| Current (mA)     | Phase Margin (Degrees) | Closed Loop PSRR (dB) |
+|-------------------|------------------------|------------------------|
+| 2 (Worst Case)   | 49.68                 | -51.67                |
+| 10                 | 68.61                 | -55.94                |
 
 # Tech Plots
 
