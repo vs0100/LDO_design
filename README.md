@@ -324,7 +324,9 @@ Below table lists down the Vgs, Vth and Vds values and the region of operation f
 
 ### Loop Gain
 
-<img src="Graphs/45nm_int_CL_PSRR.png" alt="Step 1.2" width="800"/><br>
+<img src="Graphs/45_int_OL.png" alt="Step 1.2" width="800"/><br>
+
+<img src="Graphs/45_int_CL.png" alt="Step 1.2" width="800"/><br>
 
 
 

@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # File path to the CSV file
-csv_file_path = "Repo\Plots\LDO_45nm_ext_90_LG_h.txt"
+csv_file_path = "Plots\LDO_45nm_int_90_OL.txt"
 
 # Initialize lists for storing frequency, magnitude, and phase
 frequency = []
@@ -61,5 +61,5 @@ ax2.tick_params(axis='y', labelcolor=color)
 ax2.legend(loc='upper right')
 
 # Final adjustments
-plt.title('Loop Gain Bode Plot for externally compensated LDO with heavy load current (10 mA)')
+plt.title('Open Loop PSRR Bode Plot for internally compensated LDO with light load current (2 mA)')
 plt.show()
