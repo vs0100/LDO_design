@@ -32,7 +32,7 @@ When the voltage difference between the input and output falls below the dropout
 
 ## Calculation of transistor sizes using the gm/Id methodology
 
-### Passfet Sizing:
+### Pass FET Sizing:
 We sized the pass transistor with the minimum channel length using the 45nm technology node to maximize current flow and minimize resistance. However, to achieve better gain, we opted to use a channel length of 90nm.
 
 ```
@@ -136,7 +136,7 @@ Below table lists down the Vgs, Vth and Vds values and the region of operation f
 | MPass      | 0.648     | 0.487           | 0.161 | 0.401     | Saturation          |
 | M8         | 0.597     | 0.469           | 0.128 | 0.999     | Saturation          |
 
-### Loop Gain for worst case scenario with heavy load current of 10 mA.
+### Loop Gain for worst case scenario with heavy load current of 10 mA
 
 <img src="Graphs/45_ext_LG_h.png" alt="Step 1.2" width="800"/><br>
 
@@ -148,7 +148,11 @@ The locations of the two poles and the unity gain frequency is as follows,
 | f_ugb    | 316.23 KHz    |
 | fp2      | 2.51 MHz      |
 
-### Open Loop PSRR
+<img src="Sim_SS/45_ext_PM.png" alt="Step 1.2" width="800"/><br>
+
+The Phase Margin for the load current of 10 mA is equal to **83.17** degrees.
+
+### Open Loop PSRR for worst case scenario with heavy load current of 10 mA
 
 Below is the circuit to simulate the Open-Loop PSSR,
 
@@ -158,7 +162,7 @@ Below is the circuit to simulate the Open-Loop PSSR,
 
 In order to calculate the open loop PSRR we need to send an AC signal from the source which in our case is VDD. 
 
-Here we are giving an AC 1 signal in the source. This signal is given to the source of the passfet and the source of pmos in the diffamp. 
+Here we are giving an AC 1 signal in the source. This signal is given to the source of the Pass FET and the source of pmos in the diffamp. 
 
 We will ideally want very bad PSRR in the diffamp as we want the OTA output to have all the AC noise such that Vsg of pmos = 0 ( small signal analysis ). 
 
@@ -170,11 +174,11 @@ You can see AC 0 in the circuit indicating that there is an open loop in the cir
 
 Since there is no feedback in the circuit we can thus say that there will be noise at the output and thus the rejection will be very poor.
 
-#### Open Loop PSRR Waveform
+#### Open Loop PSRR Waveform for worst case scenario with heavy load current of 10 mA
 
 <img src="Graphs/45_ext_OL_h.png" alt="Step 1.2" width="800"/><br>
 
-### Closed Loop PSRR
+### Closed Loop PSRR for worst case scenario with heavy load current of 10 mA
 
 <img src="Graphs/45_ext_CL_h.png" alt="Step 1.2" width="800"/><br>
 
