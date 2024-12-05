@@ -136,7 +136,7 @@ Below table lists down the Vgs, Vth and Vds values and the region of operation f
 | MPass      | 0.648     | 0.487           | 0.161 | 0.401     | Saturation          |
 | M8         | 0.597     | 0.469           | 0.128 | 0.999     | Saturation          |
 
-### Loop Gain
+### Loop Gain for worst case scenario with heavy load current of 10 mA.
 
 <img src="Graphs/45_ext_LG_h.png" alt="Step 1.2" width="800"/><br>
 
