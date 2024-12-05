@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # File path to the CSV file
-csv_file_path = "Plots\\LDO_45nm_int_90_LG_h.txt"
+csv_file_path = "Plots\LDO_45nm_int_90_LG.txt"
 
 # Initialize lists for storing frequency, magnitude, and phase
 frequency = []
@@ -28,8 +28,8 @@ with open(csv_file_path, 'r') as file:
         phase.append(ph)
 
 # User-specified pole frequencies and their labels
-pole_frequencies = [318.31, 318310, 2633000]  # Example pole frequencies (can be updated)
-pole_labels = ['Wp1', 'Wugb', 'Wp2']  # Labels for the poles
+pole_frequencies = [2330, 2482890]  # Example pole frequencies (can be updated)
+pole_labels = ['Wp1', 'Wp2 = Wugb']  # Labels for the poles
 
 # Find and annotate poles
 pole_indices = [np.argmin(np.abs(np.array(frequency) - pole)) for pole in pole_frequencies]
@@ -71,6 +71,6 @@ ax2.tick_params(axis='y', labelcolor=color)
 ax2.legend(loc='upper right')
 
 # Final adjustments
-plt.title('Loop Gain Bode Plot for externally compensated LDO with heavy load current (10 mA)')
+plt.title('Loop Gain Bode Plot for internally compensated LDO with light load current (2 mA)')
 plt.tight_layout()  # Adjust layout to prevent clipping
 plt.show()

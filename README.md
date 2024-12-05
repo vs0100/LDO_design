@@ -322,12 +322,21 @@ Below table lists down the Vgs, Vth and Vds values and the region of operation f
 | MPass      | 0.532     | 0.487           | 0.045 | 0.401     | Saturation          |
 | M8         | 0.597     | 0.469           | 0.128 | 1         | Saturation          |
 
-### Loop Gain
+### Loop Gain for minimum load current of 2 mA
+
+<img src="Graphs/45_int_LG.png" alt="Step 1.2" width="800"/><br>
+
+### Open Loop PSRR for minimum load current of 2 mA
 
 <img src="Graphs/45_int_OL.png" alt="Step 1.2" width="800"/><br>
 
+### Closed Loop PSRR for minimum load current of 2 mA
+
 <img src="Graphs/45_int_CL.png" alt="Step 1.2" width="800"/><br>
 
+### Phase Margin for 2 mA load current
+
+<img src="Sim_SS/45_int_PM.png" alt="Step 1.2" width="800"/><br>
 
 
 # Tech Plots
