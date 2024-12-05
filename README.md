@@ -22,6 +22,7 @@
     - [Closed Loop PSRR with light load current of 2 mA](#closed-loop-psrr-with-light-load-current-of-2-ma)
     - [Transient Response of externally compensated LDO](#transient-response-of-externally-compensated-ldo)
   - [Comparison of Phase Margin and Closed loop PSRR for ILoad\_min and ILoad\_Max](#comparison-of-phase-margin-and-closed-loop-psrr-for-iload_min-and-iload_max)
+  - [DC sweep of Vdd for the externally compensated LDO](#dc-sweep-of-vdd-for-the-externally-compensated-ldo)
 - [Internally Compensated LDO Regulator](#internally-compensated-ldo-regulator)
   - [Specification of the Design](#specification-of-the-design-1)
   - [LTSpice Schematic](#ltspice-schematic-1)
@@ -262,6 +263,9 @@ Here, we can see that with the change in Load current, the output voltage is abl
 | 10 (Worst Case)   | 83.17                 | -57.32                |
 | 2                 | 87.63                 | -51.31                |
 
+## DC sweep of Vdd for the externally compensated LDO
+
+<img src="Graphs/45_ext_Vdd.png" alt="Step 1.2" width="800"/><br>
 
 # Internally Compensated LDO Regulator
 
@@ -408,6 +412,7 @@ Here we see spikes because the feedback loop takes time to respond to the change
 |-------------------|------------------------|------------------------|
 | 2 (Worst Case)   | 49.68                 | -51.67                |
 | 10                 | 68.61                 | -55.94                |
+
 
 # Tech Plots
 
